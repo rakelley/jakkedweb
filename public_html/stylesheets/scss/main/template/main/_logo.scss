@@ -1,0 +1,51 @@
+/**
+ * Styles for big svg logo in main template
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.logo {
+    height: 8.125em; 
+    max-width: 100%;
+    float: left; 
+    @include media-phoneLand { 
+        height: 5em;
+    }
+    @include media-phonePort {
+        height: 4em;
+    }
+}
+%logo-text {
+    @extend %font-family-secondary;
+    fill: $color_second;
+}
+.logo-text-jakked {
+    @extend %logo-text;
+    font-size: 137.5px;
+}
+.logo-text-hardcore {
+    @extend %logo-text;
+    font-size: 105px;
+}
+.logo-text-gym {
+    @extend %logo-text;
+    font-size: 69.2945px;
+    stroke: $color_third_accent;
+    stroke-width: 2;
+}
+.logo-circle-inner {
+    fill: none;
+    stroke: $color_second;  
+    stroke-width: 8;
+}
+.logo-circle-outer {
+    fill: none;
+    stroke: $color_third_accent;
+    stroke-width: 4;
+}

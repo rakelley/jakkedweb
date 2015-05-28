@@ -1,0 +1,49 @@
+/**
+ * Classes for videos
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Responsive wrapper for iframe-embedded video elements
+ */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: $spacer * 2;
+    height: 0;
+    overflow: hidden;
+    iframe, object, embed, video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/**
+ * Container for .video-wrapper elements that are floated with e.g. text
+ * instead of being inside an element that they can take the full width of
+ */
+.video-container {
+    display: block;
+    float: left;
+    width: 48%;
+    margin: 0 1% $spacer;
+    @include media-phones {
+        width: 98%;
+    }
+}
+
+.video-container-right {
+    @extend .video-container;
+    float: right;
+}

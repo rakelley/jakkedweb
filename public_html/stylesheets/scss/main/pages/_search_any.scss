@@ -1,0 +1,70 @@
+/**
+ * Page-specific styles for /search/{any}
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.article_search-form {
+    @extend .column-twelve;
+}
+
+
+.article_search-nav {
+    @extend .column-four;
+    &:last-of-type {
+        @extend .column-offset-twelve;      
+    }
+}
+.article_search-nav-heading {
+    @extend %heading-four;
+    text-align: right;
+}
+.article_search-nav-pagenums {
+    @extend %list-unstyled;
+    float: right;
+}
+%article_search-nav-li {
+    @extend .margin-bottom-none;
+    float: left;
+}
+.article_search-nav-page {
+    @extend %article_search-nav-li;
+    a {
+        @extend .button;
+        margin: 0;
+        min-width: $spacer * 1.5;
+        @include media-wide {
+            min-width: $spacer * 2;
+        }
+    }
+}
+.article_search-nav-spacer {
+    @extend %article_search-nav-li;
+    @extend %font-color-secondary;
+    padding-top: $spacer / 2;
+}
+
+
+.article_search-results {
+    @extend .column-sixteen;
+    margin-top: $spacer;
+    list-style: none;
+    a {
+        @extend %font-color-primary;
+        &:hover,&:focus {
+            @extend %font-color-secondary;
+        }
+    }
+}
+
+.article_search-results-title {
+    @extend .heading-section-minor;
+    text-align: left;
+    margin-bottom: 0;
+}

@@ -1,0 +1,54 @@
+/**
+ * Silent classes for button types
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+%button {
+    @extend %font-family-secondary;
+    @extend .alignment-center;
+    display: inline-block;
+    padding: $spacer / 2 $spacer;
+    border: 0;
+    font-size: 1.25em;
+    cursor: pointer;
+    background: $color_second_accent;
+    color: $color_first_accent;
+    &:hover, &:focus {
+        background: adjust_color($color_second_accent, $lightness: 5%);
+        color: adjust_color($color_first_accent, $lightness: 5%);
+        box-shadow: 0 0 3px 0 $color_first;
+        transition: 0.25s;
+    }
+    &:active {
+        background: adjust_color($color_second_accent, $lightness: -5%);
+        color: adjust_color($color_first_accent, $lightness: -5%);
+    }
+    &:visited {
+        color: $color_first_accent;
+    }
+}
+
+%button-inverse {
+    @extend %button;
+    background: $color_first_accent;
+    color: $color_second_accent;
+    &:hover, &:focus {
+        background: adjust_color($color_first_accent, $lightness: 5%);
+        color: adjust_color($color_second_accent, $lightness: 5%);
+        box-shadow: 0 0 3px 0 $color_second;
+    }
+    &:active {
+        background: adjust_color($color_first_accent, $lightness: -5%);
+        color: adjust_color($color_second_accent, $lightness: -5%);
+    }
+    &:visited {
+        color: $color_second_accent;
+    }
+}

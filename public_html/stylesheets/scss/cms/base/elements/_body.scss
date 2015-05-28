@@ -1,0 +1,35 @@
+/**
+ * Resets and base styles for body elements
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    @extend %font-family-primary;
+    @extend %font-lineheight-base;
+    @extend %font-size-base;
+    @extend %font-color-primary;
+    @extend %background-color-base;
+    margin: 0;
+}
+
+main {
+    @extend %clearfix;
+    padding: $spacer 0;
+    min-height: 800px;
+}
+
+button {
+    @extend %button;
+}

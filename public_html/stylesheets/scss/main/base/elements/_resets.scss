@@ -1,0 +1,37 @@
+/**
+ * Style Resets
+ * Should be first css-generating file included in main scss file
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline; 
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
+nav, section {
+    @extend %clearfix;
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

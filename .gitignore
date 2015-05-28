@@ -1,0 +1,24 @@
+#cache
+cache/*
+logs/*
+.sass-cache
+error_log
+
+#secrets
+*secrets.json
+private/*
+
+#3rd party
+vendor/*
+
+#testing/dev
+*.Sync*
+*.project
+*.sublime*
+*/stylesheets/*.rb
+runonce.php
+public_html/test.php
+todo.txt
+phpinfo.php
+getini.php
+composer.lock

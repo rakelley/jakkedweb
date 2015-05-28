@@ -1,0 +1,19 @@
+{
+    "require": {
+        "rakelley/jhframe": "^1.0.0",
+        "google/apiclient": "^1.0.0",
+        "psr/log": "^1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.2.0",
+        "mikey179/vfsStream": "^1.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "main\\": "src/main/",
+            "cms\\": "src/cms/",
+            "test\\": "test/",
+            "": "src/"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+/**
+ * Silent classes for box shadows
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+%shadow-base {
+    box-shadow: 0 0 $spacer / 2 1px $color_shadow;
+}
+%shadow-base-small {
+    box-shadow: 0 0 $spacer / 4 1px $color_shadow;
+}
+%shadow-base-large {
+    box-shadow: 0 0 $spacer 1px $color_shadow;
+}
+
+
+%shadow-inset-base {
+    box-shadow: inset 0 0 $spacer / 2 $color_shadow;
+}
+
+
+%shadow-first-small {
+    box-shadow: 0 0 $spacer / 4 1px $color_first_accent;
+}

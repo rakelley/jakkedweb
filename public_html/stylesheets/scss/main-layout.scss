@@ -1,0 +1,118 @@
+/**
+ * All styles for Main jakkedweb application
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Compass
+ * Dependencies from the Compass gem
+ */
+@import "compass/css3/images";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+/**
+ * Util
+ * Variables, mixins, and silent classes.  Util files should never generate
+ * CSS themselves.
+ */
+@import "main/util/config/_borders";
+@import "main/util/config/_colors";
+@import "main/util/config/_fonts";
+@import "main/util/config/_skeleton";
+@import "main/util/config/_spacing";
+@import "main/util/config/_zindex";
+
+@import "main/util/mixins/_backgrounds";
+@import "main/util/mixins/_balloon";
+@import "main/util/mixins/_borders";
+@import "main/util/mixins/_forms";
+
+@import "main/util/silent-classes/_animations";
+@import "main/util/silent-classes/_background";
+@import "main/util/silent-classes/_border";
+@import "main/util/silent-classes/_clearfix";
+@import "main/util/silent-classes/_display";
+@import "main/util/silent-classes/_font";
+@import "main/util/silent-classes/_headings";
+@import "main/util/silent-classes/_lists";
+@import "main/util/silent-classes/_shadow";
+@import "main/util/silent-classes/_zindex";
+
+
+/**
+ * Base
+ * Resets and basic element styles.
+ */
+@import "main/base/elements/_resets";//must come first
+@import "main/base/elements/_font-declarations";
+@import "main/base/elements/_body";
+@import "main/base/elements/_forms";
+@import "main/base/elements/_lists";
+@import "main/base/elements/_tables";
+@import "main/base/elements/_typographic";
+
+
+/**
+ * Vendor
+ * 3rd-party SCSS/CSS.
+ */
+@import "main/vendor/ionicons/_jakked-ionicons";
+@import "main/vendor/lightbox2/_lightbox";
+
+
+/**
+ * Layout
+ * Basic layout styles.
+ */
+@import "main/layout/_alignment";
+@import "main/layout/_display";
+@import "main/layout/_margins";
+@import "main/layout/_skeleton";
+@import "main/layout/_typographic";
+
+
+/**
+ * Component
+ * Reusable generic objects and non-page-specific widgets.
+ */
+@import "main/component/generic/_box";
+@import "main/component/generic/_button";
+@import "main/component/generic/_containers";
+@import "main/component/generic/_headings";
+@import "main/component/generic/_images";
+@import "main/component/generic/_lists";
+@import "main/component/generic/_modals";
+@import "main/component/generic/_paragraphs";
+
+@import "main/component/widget/_ajax_overlay";
+@import "main/component/widget/_form_status";
+@import "main/component/widget/_galleries";
+@import "main/component/widget/_page_container";
+@import "main/component/widget/_tabs";
+@import "main/component/widget/_video";
+
+
+/**
+ * Page
+ * Page-specific styles.
+ */
+@import "main/pages/_article_any";
+@import "main/pages/_contactus_index";
+@import "main/pages/_home";
+@import "main/pages/_search_any";
+@import "main/pages/_trainers_index";
+
+
+/**
+ * Template
+ * Template styles.
+ */
+@import "main/template/_main";

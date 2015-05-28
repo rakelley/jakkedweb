@@ -1,0 +1,92 @@
+/**
+ * Styles for header in main template
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.template-main-header {
+    background: url("../images/header/hbackground.jpg");
+    @include bg_image-properties(right, no-repeat, inherit);
+    @include media-tablet {
+        background: none;
+    }
+    @include media-phones {
+        display: none;
+    }
+
+    .randquote {
+        @extend .column-ten;
+        @extend %font-color-secondary; 
+        @extend %font-size-big;
+        @extend %display-hidden-phones;
+        padding-top: $spacer / 2;
+    }
+}
+
+.template-main-header-top {
+    @extend %clearfix;
+}
+.template-main-header-logo-container {
+    @extend .column-six;
+    @include media-phones {
+        width: auto;
+        max-width: 40%;
+        margin-left: $spacer / 4;
+    }
+}
+.template-main-header-logo-wrapper {
+    @extend %display-block;
+}
+
+.template-main-header-bottom {
+    @extend %clearfix;
+    @extend .margin-bottom-half;
+}
+.template-main-header-socmedia {
+    @extend .column-five;
+    padding-top: $spacer / 4;
+    @include media-phones {
+        padding-top: $spacer;
+        width: auto;
+        float: right;
+        margin-right: $spacer / 4;
+    }
+    a {
+        @extend %template-main-header-socmedia-button;
+    }
+}
+%template-main-header-socmedia-button {
+    float: right;
+    font-size: 2.5em;
+    margin-right: $spacer / 2;
+    @include media-subbase {
+        font-size: 2em;
+    }
+    @include media-phonePort {
+        font-size: 1.8em;
+        margin-right: $spacer / 2.5;
+    }
+    &:nth-of-type(1) {
+        margin-right: 0;
+    }
+}
+
+
+.template-main-mobile_header {
+    @extend %background-color-container;
+    display: none;
+    padding-top: $spacer / 4;
+    @include media-phones {
+        display: block;
+    }
+
+    .template-main-header-top {
+        @extend .column-sixteen;
+    }
+}

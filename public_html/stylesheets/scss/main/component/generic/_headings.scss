@@ -1,0 +1,72 @@
+/**
+ * Classes for common heading types
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Oversized heading for extreme emphasis
+ */
+.heading-extreme {
+    @extend .alignment-center;
+    @extend .margin-bottom-quarter;
+    font-size: 15em;
+    @include media-phoneLand {
+        font-size: 12.5em;
+    }
+    @include media-phonePort {
+        font-size: 10em;
+    }
+}
+
+/**
+ * Close to base paragraph styling, used when a h1 or h2 is desired for
+ * seo/semantics but not for presentation.
+ */
+.heading-pseudo-text {
+    @extend %font-family-primary;
+    @extend %font-color-primary;
+    @extend .margin-bottom;
+    font-size: 100%;
+    font-weight: bold;
+    @include media-base {
+        font-size: 110%;
+    }
+}
+
+/**
+ * Heading for entire page
+ */
+.heading-page {
+    @extend %heading-two;
+    @extend .alignment-left;
+}
+
+/**
+ * Heading for a page section
+ */
+.heading-section {
+    @extend %heading-three;
+    @extend .alignment-center;
+}
+
+/**
+ * Heading for a minor page section or subheading for a page section
+ */
+.heading-section-minor {
+    @extend %heading-five;
+    @extend .alignment-center;
+}
+
+/**
+ * Margin fix for .heading-section-minor used as a subheading
+ */
+.heading-section + .heading-section-minor {
+    margin-top: $spacer / -2;
+}

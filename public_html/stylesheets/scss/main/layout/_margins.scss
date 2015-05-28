@@ -1,0 +1,27 @@
+/**
+ * Generic margin classes
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.margin-bottom {
+    margin-bottom: $spacer;
+}
+.margin-bottom-double {
+    margin-bottom: $spacer * 2;
+}
+.margin-bottom-half {
+    margin-bottom: $spacer / 2;
+}
+.margin-bottom-quarter {
+    margin-bottom: $spacer / 4;
+}
+.margin-bottom-none {
+    margin-bottom: 0;
+}

@@ -1,0 +1,51 @@
+/**
+ * Styles for alertbanner widget in main template
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.alertbanner-wrapper {
+    @extend %clearfix;
+}
+.alertbanner {
+    @extend %font-color-primary;
+    @extend .column-seven;
+    @extend .margin-bottom;
+    //using column class for float and margins, overriding column width
+    width: auto;
+    font-size: 1.1em;
+    padding: 0 1em;
+    line-height: 1.8em;
+    background: $color_second;
+    position: relative;
+    margin-top: $spacer / 4;
+    @include media-phonePort {
+        font-size: 1em;
+    }
+    &:after {
+        content:"";
+        width: 0;
+        height: 0;
+        position: absolute; 
+        border: solid transparent;
+        border-color: rgba($color_second, 0);
+        border-left-color: $color_second;
+        border-width: 0.95em 0 0.95em 0.85em;
+        top: 50%;
+        margin-top: -0.9em;
+        left: 100%;
+        transform: scale(.9999); //aliasing fix hack
+        @include media-phonePort {
+            margin-top: -0.95em;
+        }
+    }
+    &:visited {
+        @extend %font-color-primary;
+    }
+}

@@ -1,0 +1,31 @@
+/**
+ * Styles for Ace code editor
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Editor elements.  The JS requires this id for the element so there's no point
+ * converting the styling to a class currently.
+ */
+#aceEditor {
+    position: relative;
+    @extend %zindex-foreground;
+    width: 97%;
+    height: 400px; //absolute height required
+    margin-bottom: $spacer;
+    font-size: 1.1em;
+}
+
+/**
+ * Hidden textarea used by editor for form submission
+ */
+.acetarget {
+    @extend %display-hidden;
+}

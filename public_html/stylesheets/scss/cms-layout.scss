@@ -1,0 +1,108 @@
+/**
+ * All styles for CMS jakkedweb application
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Compass
+ * Dependencies from the Compass gem
+ */
+@import "compass/css3/images";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+
+/**
+ * Util
+ * Variables, mixins, and silent classes.  Util files should never generate
+ * CSS themselves.
+ */
+@import "main/util/config/_borders";
+@import "main/util/config/_skeleton";
+@import "main/util/config/_spacing";
+@import "main/util/config/_zindex";
+@import "cms/util/config/_colors";
+@import "cms/util/config/_fonts";
+
+@import "main/util/mixins/_backgrounds";
+@import "main/util/mixins/_balloon";
+@import "main/util/mixins/_borders";
+
+@import "main/util/silent-classes/_animations";
+@import "main/util/silent-classes/_background";
+@import "main/util/silent-classes/_border";
+@import "main/util/silent-classes/_clearfix";
+@import "main/util/silent-classes/_display";
+@import "main/util/silent-classes/_headings";
+@import "main/util/silent-classes/_lists";
+@import "main/util/silent-classes/_zindex";
+@import "cms/util/silent-classes/_button";
+@import "cms/util/silent-classes/_font";
+@import "cms/util/silent-classes/_reset";
+
+
+/**
+ * Base
+ * Resets and basic element styles.
+ */
+@import "main/base/elements/_typographic";
+@import "cms/base/elements/_body";
+@import "cms/base/elements/_forms";
+@import "cms/base/elements/_lists";
+@import "cms/base/elements/_tables";
+
+
+/**
+ * Vendor
+ * 3rd-party SCSS/CSS.
+ */
+@import "main/vendor/ionicons/_jakked-ionicons";
+
+
+/**
+ * Layout
+ * Basic layout styles.
+ */
+@import "main/layout/_alignment";
+@import "main/layout/_display";
+@import "main/layout/_margins";
+@import "main/layout/_skeleton";
+
+
+/**
+ * Component
+ * Reusable generic objects and non-page-specific widgets.
+ */
+@import "main/component/generic/_modals";
+@import "cms/component/generic/_button";
+@import "cms/component/generic/_forms";
+@import "cms/component/generic/_headings";
+@import "cms/component/generic/_images";
+@import "cms/component/generic/_lists";
+
+@import "main/component/widget/_ajax_overlay";
+@import "main/component/widget/_form_status";
+@import "cms/component/widget/_ace";
+@import "cms/component/widget/_cms_nav";
+@import "cms/component/widget/_page_container";
+@import "cms/component/widget/_password_strength";
+@import "cms/component/widget/_tinymce";
+
+
+/**
+ * Page
+ * Page-specific styles.
+ */
+
+
+/**
+ * Template
+ * Template styles.
+ */

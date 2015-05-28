@@ -1,0 +1,88 @@
+/**
+ * Color variables
+ *
+ * @todo convert hex values to RGBA
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Primary Color Values
+ * Each accent value is additionally used when the related color is called for
+ * by element type but a small degree of emphasis or differentiation is desired.
+ * Further differentiation should be implemented via a value-neutral mix-in
+ * instead.
+ * 
+ * @param color_first           body text
+ * @param color_first_accent    active/hover anchors, element borders
+ *
+ * @param color_second          headings
+ * @param color_second_accent   table text, anchors
+ *
+ * @param color_third           element backgrounds
+ * @param color_third_accent    container background
+ *
+ * @param color_shadow          text and element shadows
+ */
+$color_first:           #DCDCDC;
+$color_first_accent:    #BABABA;
+
+$color_second:          #a320a9;
+$color_second_accent:   #7c2080;
+
+$color_third:           #232224;
+$color_third_accent:    #151416;
+
+$color_shadow:          $color_third;
+
+
+/**
+ * Secondary Color Values
+ * Values for specific element types or aspect
+ *
+ * @param color_error               form/input error element text
+ * @param color_error_background    form/input error element background
+ * @param color_success             form/input success element text
+ * @param color_success_background  form/input success element background
+ */
+$color_button_safe:         #40913A;
+$color_button_dangerous:    #A93C4A;
+
+$color_error:               $color_first;
+$color_error_background:    adjust_color($color_button_dangerous, $lightness: -5%);
+$color_success:             $color_first;
+$color_success_background:  adjust_color($color_button_safe, $lightness: -5%);
+
+
+/* Test Values */
+/*
+$color_first:           #EFFFCD;
+$color_first_accent:    #DCE9BE;
+
+$color_second:          #99173C;
+$color_second_accent:   #7E1B3A;
+
+$color_third:           #555152;
+$color_third_accent:    #2E2633;
+
+$color_shadow:  #222;
+*/
+
+/*
+$color_first:           #D1C5A5;
+$color_first_accent:    #A38A5F;
+
+$color_second:          #793A57;
+$color_second_accent:   #4D3339;
+
+$color_third:           #8C873E;
+$color_third_accent:    #7D7537;
+
+$color_shadow:  #222;
+*/

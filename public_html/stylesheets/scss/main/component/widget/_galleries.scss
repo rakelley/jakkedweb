@@ -1,0 +1,122 @@
+/**
+ * Classes for galleries
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Basic gallery silent-class
+ */
+%gallery {
+    @extend .column-sixteen;
+    @extend %clearfix;
+    ul {
+        @extend %list-unstyled;
+    }
+}
+
+/**
+ * Common wrapper class intended for list item elements of gallery
+ * Objects implementing this class should specify width
+ */
+.gallery-item-wrapper {
+    @extend .alignment-center;
+    @extend .margin-bottom;
+    display: inline-block;
+    float: left;
+    margin: 0 2% $spacer;
+    @include media-nophones {
+        margin: 0 1% $spacer;
+    }
+}
+
+/**
+ * Common class for gallery images
+ */
+.gallery-item {
+    max-width: 100%;
+    width: auto;
+}
+
+/**
+ * Header element containing title and nav
+ */
+.gallery-header {
+    @extend .alignment-center;
+    @extend .margin-bottom;
+    width: 100%;
+}
+
+/**
+ * Gallery title
+ */
+.gallery-title {
+    @extend .heading-page;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/**
+ * Inter-gallery navigation buttons
+ */
+.gallery-nav-previous {
+    @extend .button;
+    float: left;
+}
+.gallery-nav-next {
+    @extend .button;
+    float: right;
+}
+
+
+
+/**
+ * Large gallery
+ * 3 items wide at base width, 1 at phone
+ */
+.gallery-large {
+    @extend %gallery;
+    .gallery-item-wrapper {
+        width: 96%;
+        @include media-nophones {
+            width: 31.3%;
+        }
+    }
+    .gallery-item {
+        @extend %border-radius-base;
+        max-height: 14em;
+        @include media-tablet {
+            max-height: 11em;
+        }
+    }
+}
+
+
+/**
+ * Image gallery with lightbox plug-in enabled
+ * 4 items wide at base width, 6 at wide, 2 at phone
+ */
+.gallery-lightbox {
+    @extend %gallery;
+    .gallery-item-wrapper {
+        width: 46%;
+        @include media-nophones {
+            width: 23%;
+        }
+        @include media-wide {
+            width: 14.6%;
+        }
+    }
+    .gallery-item, .gallery-item-wrapper {
+        max-height: 8em;
+        @include media-base {
+            max-height: 10em;
+        }
+    }
+}

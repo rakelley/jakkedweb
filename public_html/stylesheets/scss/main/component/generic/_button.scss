@@ -1,0 +1,82 @@
+/**
+ * Classes for buttons
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.button {
+    @extend %font-family-secondary;
+    @extend .alignment-center;
+    @extend %border-radius-base;
+    display: inline-block;
+    min-width: 5em;
+    margin: $spacer auto;
+    padding: $spacer / 4 $spacer / 2;
+    border: 1px solid $color_first_accent;
+    background-color: $color_second_accent;
+    color: $color_first_accent;
+    font-size: 1.25em;
+    &:hover, &:focus {
+        border: 1px solid $color_first;
+        background-color: $color_second;
+        color: $color_first;
+        box-shadow: 0 0 3px 0 $color_first;
+        transition: 0.25s;
+    }
+    &:active {
+        background-color: adjust_color($color_second_accent, $lightness: -5%);
+        color: adjust_color($color_first_accent, $lightness: -5%);
+    }
+    &:visited {
+        color: $color_first_accent;
+    }
+}
+
+.button-inverse {
+    @extend .button;
+    border: 1px solid $color_second;
+    background-color: $color_first;
+    color: $color_second;
+    &:hover, &:focus {
+        border: 1px solid $color_second_accent;
+        background-color: $color_first_accent;
+        color: $color_second_accent;
+        box-shadow: 0 0 3px 0 $color_second_accent;
+    }
+    &:active {
+        background-color: adjust_color($color_first_accent, $lightness: -5%);
+        color: adjust_color($color_second_accent, $lightness: -5%);
+    }
+    &:visited {
+        color: $color_second;
+    }
+}
+
+
+
+.button-large {
+    @extend .button;
+    margin: $spacer / 4 auto;
+    padding: $spacer / 4 $spacer * 2;
+    font-size: 2em;
+    @include media-wide {
+        font-size: 2.5em;
+    }
+    @include media-subbase {
+        padding: $spacer / 4 $spacer;
+    }
+}
+
+.button-large-smalltext {
+    @extend .button-large;
+    font-size: 1.4em;
+    @include media-wide {
+        font-size: 1.75em;
+    }
+}

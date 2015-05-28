@@ -1,0 +1,12 @@
+{
+    "rakelley\\jhframe\\interfaces\\ITemplate":
+        "cms\\templates\\Cms\\Cms"
+,   "rakelley\\jhframe\\interfaces\\repository\\IMetaData":
+        "main\\repositories\\PageData"
+,    "rakelley\\jhframe\\interfaces\\services\\IBotcheck":
+        "main\\BotcheckService"
+,   "rakelley\\jhframe\\interfaces\\services\\IMail":
+        "main\\MailService"
+,   "rakelley\\jhframe\\interfaces\\services\\IAuthService":
+        "cms\\repositories\\UserAuth"
+}

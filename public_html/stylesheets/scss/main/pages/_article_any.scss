@@ -1,0 +1,45 @@
+/**
+ * Page-specific styles for /article/{any}
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.article_page {
+    @extend .column-sixteen;
+    img {
+        @extend .image-inline;
+    }
+}
+.article_page-title {
+    @extend .heading-page;
+}
+.article_page-attribution {
+    @extend .margin-bottom-double;
+}
+.article_page-footer {
+    @extend .column-ten;
+}
+.article_page-tags {
+    @extend .para-footnote;
+    font-style: italic;
+}
+
+.article_page-author {
+    @extend .modal;
+}
+.article_page-author-photo {
+    max-width: 35%;
+    max-height: 16em;
+    @include media-phones {
+        max-height: 12em;
+    }
+    display: inline-block;
+    margin-right: $spacer / 2;
+    float: left;
+}

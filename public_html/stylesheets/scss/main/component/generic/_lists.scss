@@ -1,0 +1,20 @@
+/**
+ * Classes for generic list parts
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Heading item for list
+ */
+.list-title {
+    @extend .margin-bottom-quarter;
+    margin-left: $spacer * -1;
+    list-style: none;
+}

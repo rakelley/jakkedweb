@@ -1,0 +1,37 @@
+/**
+ * Styles for generic button types
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.button {
+    @extend %button;
+}
+
+.button_safe {
+    @extend %button;
+    background: $color_button_safe;
+    &:hover, &:focus {
+        background: adjust_color($color_button_safe, $lightness: 5%);
+    }
+    &:active {
+        background: adjust_color($color_button_safe, $lightness: -5%);
+    }
+}
+
+.button_dangerous {
+    @extend %button;
+    background: $color_button_dangerous;
+    &:hover, &:focus {
+        background: adjust_color($color_button_dangerous, $lightness: 5%);
+    }
+    &:active {
+        background: adjust_color($color_button_dangerous, $lightness: -5%);
+    }
+}

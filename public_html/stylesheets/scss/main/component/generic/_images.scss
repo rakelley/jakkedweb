@@ -1,0 +1,69 @@
+/**
+ * Classes for common image types
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Block style image constrained by container
+ */
+.image-block {
+    @extend %display-block;
+    @extend %border-radius-base;
+    @extend .alignment-center;
+    max-width: 100%;
+    margin: $spacer / 4 auto;
+}
+
+
+/**
+ * Floated images inlined with text blocks
+ */
+.image-inline {
+    @extend %border-radius-base;
+    display: inline-block; 
+    float: left;
+    max-height: 27.5em;
+    max-width: 66%;
+    margin: $spacer / 2 $spacer / 4;
+    @include media-wide {
+        max-width: 45%;
+    }
+    @include media-phones {
+        max-width: calc(100% - #{$spacer / 2});
+    }
+}
+.image-inline-right {
+    @extend .image-inline;
+    float: right;
+}
+
+
+/**
+ * Horzontal (at desktop widths) row of 2-4 moderately sized images
+ */
+.image-row-container {
+    @extend .alignment-center;
+    @extend .margin-bottom;
+    img {
+        @extend %border-radius-base;
+        display: inline-block;
+        max-width: 90%;
+        max-height: 8em;
+        margin: $spacer / 4 $spacer / 8;
+        @include media-base {
+            max-width: 30%;
+            max-height: 12em;
+            margin: $spacer / 2 $spacer / 4;
+        }
+        @include media-wide {
+            max-height: 16em;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "rakelley\\jhframe\\classes\\FlatView":
+        "main\\FlatView"
+,   "rakelley\\jhframe\\interfaces\\ITemplate":
+        "main\\templates\\Main\\Main"
+,   "rakelley\\jhframe\\interfaces\\repository\\IMetaData":
+        "main\\repositories\\PageData"
+,   "rakelley\\jhframe\\interfaces\\services\\IBotcheck":
+        "main\\BotcheckService"
+,   "rakelley\\jhframe\\interfaces\\services\\IMail":
+        "main\\MailService"
+,   "Google_Client":
+        "main\\GoogleClientFactory"
+}

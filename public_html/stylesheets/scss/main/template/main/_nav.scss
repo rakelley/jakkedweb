@@ -1,0 +1,129 @@
+/**
+ * Styles for site navigation in main template
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.sitenav {
+    @extend .column-eleven;
+    @include media-subbase {
+        display: none;
+    }
+}
+
+/**
+ * Button-based large navigation for base and above media queries
+ */
+.sitenav-list {
+    @extend %list-unstyled;
+    @include media-phones {
+        display: none;
+    }
+    a {
+        @extend .button;
+        display: block;
+        min-width: 0;
+        margin: 0;
+        border-radius: 0;
+        text-align: left;
+        &:hover, &:focus {
+            transition: none;
+        }
+        &:focus + .sitenav-list-dropdown {
+            @extend %display-block;
+        }
+    }
+    li {
+        float: left;
+        margin: 0;
+        position: relative;
+        &:hover .sitenav-list-dropdown {
+            @extend %display-block;
+        }
+    }
+}
+/**
+ * Hover dropdown submenus of sitenav-list element
+ */
+.sitenav-list-dropdown {
+    @extend %zindex-nav;
+    @extend %list-unstyled;
+    display: none;
+    min-width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    li {
+        float: none;
+    }
+}
+
+
+.mobilenav {
+    @extend .column-eleven;
+    display: none;
+    @include media-subbase {
+        display: inline;
+    }
+}
+
+%mobilenav-opener-adjustments {
+    min-width: 0;
+    margin: $spacer / 4;
+}
+.mobilenav-opener {
+    @extend .button;
+    @extend %mobilenav-opener-adjustments;
+    &.active {
+        @extend .button-inverse;
+        @extend %mobilenav-opener-adjustments;
+    }
+}
+.mobilenav-opener-icon {
+    @extend .ion-navicon;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.mobilenav-list {
+    @extend %list-unstyled;
+    @extend %animation-vertical_slide-long;
+}
+
+%mobilenav-button-adjustments {
+    font-size: 1.5em;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+.mobilenav-top {
+    margin: $spacer / 4 0;
+    a {
+        @extend .button;
+        @extend %mobilenav-button-adjustments;
+    }
+}
+.mobilenav-top-withdropdown {
+    @extend .button;
+    @extend %mobilenav-button-adjustments;
+    margin: $spacer / 4 auto;
+}
+.mobilenav-dropdown {
+    @extend %list-unstyled;
+    @extend %animation-vertical_slide;
+    margin-top: $spacer / -4;
+    li {
+        margin: $spacer / 8 auto;
+    }
+    a {
+        @extend .button-inverse;
+        @extend %mobilenav-button-adjustments;
+    }
+}

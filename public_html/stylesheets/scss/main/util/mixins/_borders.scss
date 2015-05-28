@@ -1,0 +1,68 @@
+/**
+ * Mixins for border styles
+ * 
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+@mixin border_base($type: solid, $side: all, $thickness: 1px) { 
+    @if $side == all {
+        border: $thickness $type $color_first;
+    }
+    @else {
+        border-#{$side}: $thickness $type $color_first;
+    }
+}
+
+@mixin border_slightdim($type: solid, $side: all, $thickness: 1px) { 
+    @if $side == all {
+        @if lightness($color_first) > 40% {
+            border: $thickness $type adjust_color($color_first, $lightness: -20%);
+        }
+        @else {
+            border: $thickness $type adjust_color($color_first, $lightness: 12%);
+        }
+    }
+    @else {      
+        @if lightness($color_first) > 40% {
+            #{$side}: $thickness $type adjust_color($color_first, $lightness: -20%);
+        }
+        @else {
+            #{$side}: $thickness $type adjust_color($color_first, $lightness: 12%);
+        }
+    }
+};
+
+@mixin border_dim($type: solid, $side: all, $thickness: 1px) { 
+    @if $side == all {
+        @if lightness($color_first) > 40% {
+            border: $thickness $type adjust_color($color_first, $lightness: -66%);
+        }
+        @else {
+            border: $thickness $type adjust_color($color_first, $lightness: 50%);
+        }
+    }
+    @else {      
+        @if lightness($color_first) > 40% {
+            #{$side}: $thickness $type adjust_color($color_first, $lightness: -66%);
+        }
+        @else {
+            #{$side}: $thickness $type adjust_color($color_first, $lightness: 50%);
+        }
+    }
+};
+
+
+@mixin border_radius($side: all, $size: 1) {
+    @if $side == all {
+        border-radius: $corners_base * $size;
+    }
+    @else {
+        border-#{$side}-radius: $corners_base * $size;
+    }
+}

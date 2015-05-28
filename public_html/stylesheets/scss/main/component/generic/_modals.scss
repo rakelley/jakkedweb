@@ -1,0 +1,93 @@
+/**
+ * Modal classes
+ * 
+ * Derived in part from:
+ * Modals v5.1.0
+ * Simple modal dialogue pop-up windows, by Chris Ferdinandi.
+ * http://gomakethings.com
+ * 
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.modal {
+    @extend %zindex-overlay;
+    @extend %background-color-container;
+    display: none;
+    visibility: hidden;
+    border: $spacer / 8 solid $color_first_accent;
+    &.active {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 15%;
+        left: 3%;
+        right: 3%;
+        margin-left: auto;
+        margin-right: auto;
+        @media (min-width: 40em) {
+            left: 8%;
+            right: 8%;
+        }
+    }
+}
+.modal-medium {
+    @extend .modal;
+    @media (min-width: 40em) {
+        max-width: 35em;
+    }
+}
+.modal-small {
+    @extend .modal;
+    @media (min-width: 40em) {
+        max-width: 25em;
+    }
+}
+
+
+.modal-bg {//js-linked class
+    @extend %background-overlay;
+}
+
+
+.modal-close {
+    margin: 0;
+    min-width: 0;
+    float: right;
+    cursor: pointer;
+}
+
+
+.modal-header {
+    @extend %background-color-base;
+    @extend %clearfix;
+    padding: $spacer / 4 $spacer / 2;
+    .modal-heading {
+        float: left;
+        max-width: 90%;
+        margin: 0;
+        @include media-phones {
+            max-width: 80%;
+        }
+    }
+    .modal-close {
+        max-width: 10%;
+        @include media-phones {
+            max-width: 20%;
+        }
+    }
+}
+
+.modal-body {
+    padding: $spacer / 2 $spacer;
+}
+
+.modal-footer {
+    @extend %background-color-base;
+    padding: $spacer / 4 $spacer / 2;
+}

@@ -1,0 +1,37 @@
+/**
+ * Silent classes for backgrounds
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+%background-color-base {
+    background: $color_third;
+}
+%background-color-base-accent {
+    @include bg_accent($color_third);
+}
+
+
+%background-color-container {
+    background: $color_third_accent;
+}
+%background-color-container-accent {
+    @include bg_accent($color_third_accent);
+}
+
+
+%background-overlay {
+    z-index: $zindex-overlay - 1;
+    background: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

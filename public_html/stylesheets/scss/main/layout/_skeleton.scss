@@ -1,0 +1,208 @@
+/**
+ * 16 column css grid with classes usable as extendable additions to semantic
+ * classes or as presentational classes for objects which require no additional 
+ * styling.
+ *
+ * Derived in part from the Skeleton 1.0: http://www.getskeleton.com
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+
+%column-page_container { 
+    /**
+     * Page container width media-queries. The semantic class for your outermost
+     * container element should extend this.
+     */
+    @extend %clearfix;
+    width: $sk_base_container;
+    @include media-wide { 
+        width: $sk_wide_container; 
+        max-width: $sk_wide_maxwidth;
+    }
+    @include media-tablet { 
+        width: $sk_tablet_container;
+    }
+    @include media-phoneLand { 
+        width: $sk_phoneLand_container;
+        padding-left: $sk_phonePadding / 2;
+        padding-right: $sk_phonePadding / 2;
+    }
+    @include media-phonePort { 
+        width: $sk_phonePort_container;
+        padding-left: $sk_phonePadding / 2;
+        padding-right: $sk_phonePadding / 2;
+    }
+}
+
+
+.column-row {
+    /**
+     * Rows should be used to wrap horizontal groups of columns to ensure a 
+     * uniform height for content further down the page, and as alternative to
+     * nesting columns directly.
+     */
+    @extend %clearfix;
+    %column {
+        @extend .margin-bottom;
+    }
+}
+
+
+@mixin column-width-calc($column, $gutter, $count) {
+    /**
+     * Calculations for @mixin column-width
+     *
+     * @param $column   px or %     column variable for appropriate media query
+     * @param $gutter   px or %     gutter variable for appropriate media query
+     * @param $count    int         column count passthrough
+     */
+    width: $column * $count + $gutter * ($count - 1);
+}
+@mixin column-width($count) {
+    /**
+     * Defines object width for a provided number of columns out of sixteen. 
+     * Widths for single-column mobile layouts are defined in the %column class
+     * instead as they're the same across all column values.
+     *
+     * @param $count    int     number of columns
+     */
+    @include column-width-calc($sk_base_column, $sk_base_gutter, $count);
+    @include media-wide {
+        @include column-width-calc($sk_wide_column, $sk_wide_gutter, $count);
+    }
+    @include media-tablet {
+        @include column-width-calc($sk_tablet_column, $sk_tablet_gutter, $count);
+    }
+}
+
+@mixin column-width-thirds-calc($column, $gutter, $count) {
+    /**
+     * Calculations for @mixin column-width-thirds.
+     * The 1px subtraction is a necessary hack due to rounding problems.
+     *
+     * @param $column   px or %     column variable for appropriate media query
+     * @param $gutter   px or %     gutter variable for appropriate media query
+     * @param $count    int         thirds count passthrough
+     */
+    width: calc(#{($column * 16 + $gutter * 13) * $count / 3 + $gutter * ($count - 1)} - 1px);
+}
+@mixin column-width-thirds($count) {
+    /**
+     * Defines object width for columns based on thirds instead.
+     *
+     * @param $count    int     number of thirds
+     */
+    @include column-width-thirds-calc($sk_base_column, $sk_base_gutter, $count);
+    @include media-wide {
+        @include column-width-thirds-calc($sk_wide_column, $sk_wide_gutter, $count);
+    }
+    @include media-tablet {
+        @include column-width-thirds-calc($sk_tablet_column, $sk_tablet_gutter, $count);
+    }
+}
+
+/******************************* Column Classes *******************************/
+.column-one {       @extend %column; @include column-width(1); }
+.column-two {       @extend %column; @include column-width(2); }
+.column-three {     @extend %column; @include column-width(3); }
+.column-four {      @extend %column; @include column-width(4); }
+.column-five {      @extend %column; @include column-width(5); }
+.column-six {       @extend %column; @include column-width(6); }
+.column-seven {     @extend %column; @include column-width(7); }
+.column-eight {     @extend %column; @include column-width(8); }
+.column-nine {      @extend %column; @include column-width(9); }
+.column-ten {       @extend %column; @include column-width(10); }
+.column-eleven {    @extend %column; @include column-width(11); }
+.column-twelve {    @extend %column; @include column-width(12); }
+.column-thirteen {  @extend %column; @include column-width(13); }
+.column-fourteen {  @extend %column; @include column-width(14); }
+.column-fifteen {   @extend %column; @include column-width(15); }
+.column-sixteen {   @extend %column; @include column-width(16); }
+.column-onethird {  @extend %column; @include column-width-thirds(1); }
+.column-twothird {  @extend %column; @include column-width-thirds(2); }
+
+@mixin column-margins($gutter) {
+    /**
+     * Calculates column margins based on gutter size.
+     *
+     * @param $gutter   px or %     corresponding gutter variable for media mixin
+     */
+    margin-left: $gutter / 2;
+    margin-right: $gutter / 2;
+}
+%column {
+    /**
+     * Styles common to all column-numeric classes.
+     * This must come after the column classes in order for the phone media 
+     * widths to override their equal specificity.
+     */
+    @include column-margins($sk_base_gutter);
+    float: left;
+    display: inline;
+    @include media-wide {
+        @include column-margins($sk_wide_gutter);
+    }
+    @include media-tablet {
+        @include column-margins($sk_tablet_gutter);
+    }
+    @include media-phones {
+        @include column-margins(0);
+    }
+    @include media-phoneLand {
+        width: $sk_phoneLand_container - $sk_phonePadding;
+    }
+    @include media-phonePort {
+        width: $sk_phonePort_container - $sk_phonePadding;
+    }
+}
+
+
+@mixin column-offset($count) {
+    /**
+     * Calculates margins for column offset classes.
+     * 
+     * @param $count    int     number of columns the offset should be equivalent to
+     */
+    margin-left: ($sk_base_column + $sk_base_gutter) * $count;
+    @include media-wide {
+        margin-left: ($sk_wide_column + $sk_wide_gutter) * $count;
+    }
+    @include media-tablet {
+        margin-left: ($sk_tablet_column + $sk_tablet_gutter) * $count;
+    }
+}
+
+/*************************** Column Offset Classes ****************************/
+.column-offset-one {        @extend %column-offset; @include column-offset(1); }
+.column-offset-two {        @extend %column-offset; @include column-offset(2); }
+.column-offset-three {      @extend %column-offset; @include column-offset(3); }
+.column-offset-four {       @extend %column-offset; @include column-offset(4); }
+.column-offset-five {       @extend %column-offset; @include column-offset(5); }
+.column-offset-six {        @extend %column-offset; @include column-offset(6); }
+.column-offset-seven {      @extend %column-offset; @include column-offset(7); }
+.column-offset-eight {      @extend %column-offset; @include column-offset(8); }
+.column-offset-nine {       @extend %column-offset; @include column-offset(9); }
+.column-offset-ten {        @extend %column-offset; @include column-offset(10); }
+.column-offset-eleven {     @extend %column-offset; @include column-offset(11); }
+.column-offset-twelve {     @extend %column-offset; @include column-offset(12); }
+.column-offset-thirteen {   @extend %column-offset; @include column-offset(13); }
+.column-offset-fourteen {   @extend %column-offset; @include column-offset(14); }
+.column-offset-fifteen {    @extend %column-offset; @include column-offset(15); }
+
+%column-offset {
+    /**
+     * Styles common to all column-offset classes.
+     * This must come after the offset classes in order for the phone media 
+     * margins to override their equal specificity.
+     */
+    @include media-phones {
+        margin-left: 0;
+    }
+}

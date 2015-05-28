@@ -1,0 +1,28 @@
+/**
+ * Ionicon classes solely for icons currently in use to reduce css bloat.
+ *
+ * For ionicons license and all available classes, see _ionicons.scss
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+@import "ionicons-variables";
+@import "ionicons-font";
+
+.ion-social-facebook,
+.ion-social-rss,
+.ion-social-twitter,
+.ion-social-youtube-outline,
+.ion-navicon
+{
+    @extend .ion;
+}
+.#{$ionicons-prefix}social-facebook:before { content: "\f231"; }
+.#{$ionicons-prefix}social-rss:before { content: "\f23d"; }
+.#{$ionicons-prefix}social-twitter:before { content: "\f243"; }
+.#{$ionicons-prefix}social-youtube-outline:before { content: "\f24c"; }
+.#{$ionicons-prefix}navicon:before { content: "\f20e"; }

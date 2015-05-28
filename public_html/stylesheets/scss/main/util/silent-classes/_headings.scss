@@ -1,0 +1,56 @@
+/**
+ * Silent classes for heading types
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+%heading {
+    @extend %font-color-secondary;
+    @extend %font-family-secondary;
+    @extend %font-lineheight-heading;
+    a, a:visited {
+        @extend %font-color-secondary;
+    }
+}
+
+%heading-one {
+    @extend %heading;
+    @extend .margin-bottom-half;
+    font-size: 2.25em;
+}
+
+%heading-two {
+    @extend %heading;
+    @extend .margin-bottom-half;
+    font-size: 1.875em;
+}
+
+%heading-three {
+    @extend %heading;
+    @extend .margin-bottom-half;
+    font-size: 1.5em;
+}
+
+%heading-four {
+    @extend %heading;
+    @extend .margin-bottom-quarter;
+    font-size: 1.25em;
+}
+
+%heading-five {
+    @extend %heading;
+    @extend .margin-bottom-quarter;
+    font-size: 1.1em;
+}
+
+%heading-six {
+    @extend %heading;
+    @extend .margin-bottom-quarter;
+    font-size: 1em;
+}

@@ -1,0 +1,57 @@
+/**
+ * Base styles for form elements
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+%form-input {
+    float: left;
+    margin-bottom: $spacer;
+    padding: $spacer / 4;
+}
+
+form {
+    @extend .margin-bottom-double;
+    padding: 0 1%;
+    fieldset {
+        @extend %background-color-container;
+    }
+    select {
+    	@extend %form-input;
+    }
+    label {
+        float: left;
+        width: 100%;
+        margin-bottom: $spacer / 4;
+    }
+}
+
+input:not([type="submit"]) {
+    @extend %form-input;
+    width: 96%;
+}
+
+input[type="checkbox"] {
+    @extend %form-input;
+    width: auto;
+    margin-right: 1em;
+}
+
+input[type="submit"] {
+    float: right;
+    width: auto;
+    padding: $spacer / 2 $spacer * 2;
+    margin: $spacer / 2 0;
+}
+
+textarea {
+    @extend %form-input;
+    width: 96%;
+    height: 29em;
+}

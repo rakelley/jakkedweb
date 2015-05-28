@@ -1,0 +1,84 @@
+/**
+ * Column Grid Configuration
+ *
+ * @param sk_smurf          px       min screen width for smurf ruleset
+ *                                   (not required for smallest)
+ * @param smurf_max         px       max screen width for smurf ruleset
+ *                                   (not required for largest)
+ * @param smurf_container   px or %  page_container width for smurf ruleset,
+ *                                   should be equal to column*16 + gutter*16 
+ *                                   for multi-column pixel grids
+ * @param smurf_column      px or %  column width for smurf ruleset
+ *                                   (not required for single-column mobile)
+ * @param smurf_gutter      px or %  gutter width for smurf ruleset
+ *                                   (not required for single-column mobile)
+ *
+ * @mixin media-smurf                usage- "@include media-smurf { css }"
+ * 
+ * @param sk_wide_maxwidth  px       absolute maximum width the container will
+ *                                   expand to
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+$sk_wide_column:    4.25%;
+$sk_wide_gutter:    2%;
+$sk_wide:           1250px;
+$sk_wide_container: 96%;
+$sk_wide_maxwidth:  1680px;
+@mixin media-wide {
+    @media screen and (min-width: #{$sk_wide}) { @content; }
+}
+
+$sk_base_column:    40px;
+$sk_base_gutter:    20px;
+$sk_base:           $sk_base_column * 16 + $sk_base_gutter * 16;
+$sk_base_container: $sk_base;
+@mixin media-base {
+    @media screen and (min-width: #{$sk_base}) { @content; }
+}
+
+$sk_tablet_column:      28px;
+$sk_tablet_gutter:      20px;
+$sk_tablet_max:         $sk_base - 1;
+$sk_tablet:             $sk_tablet_column * 16 + $sk_tablet_gutter * 16;
+$sk_tablet_container:   $sk_tablet;
+@mixin media-tablet {
+    @media screen and (min-width: #{$sk_tablet}) and
+    (max-width: #{$sk_tablet_max}) {
+        @content;
+    }
+}
+
+$sk_phonePadding:           10px;
+$sk_phoneLand_max:          $sk_tablet - 1;
+$sk_phoneLand:              480px;
+$sk_phoneLand_container:    $sk_phoneLand - 60;
+@mixin media-phoneLand {
+    @media screen and (min-width: #{$sk_phoneLand}) and
+    (max-width: #{$sk_phoneLand_max}) {
+        @content;
+    }
+}
+
+$sk_phonePort_max:          $sk_phoneLand - 1;
+$sk_phonePort_container:    $sk_phonePort_max - 179;
+@mixin media-phonePort {
+    @media screen and (max-width: #{$sk_phonePort_max}) { @content; }
+}
+
+@mixin media-nophones {
+    @media screen and (min-width: #{$sk_tablet}) { @content; }
+}
+@mixin media-phones {
+    @media screen and (max-width: #{$sk_phoneLand_max}) { @content; }
+}
+@mixin media-subbase {
+    @media screen and (max-width: #{$sk_tablet_max}) { @content; }
+}

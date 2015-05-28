@@ -1,0 +1,30 @@
+/**
+ * Styles for footer in main template
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.template-main-footer {
+    @extend %clearfix;
+    @include bg_accent($color_third_accent, small);
+    margin-top: $spacer * 2;
+    padding-top: $spacer / 2;
+}
+
+.template-main-footer-copyright {
+    @extend .column-ten;
+}
+
+.template-main-footer-address {
+    @extend .column-six;
+    text-align: right; 
+    @include media-phones {
+        text-align: left;
+    }
+}

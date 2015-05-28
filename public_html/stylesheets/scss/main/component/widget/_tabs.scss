@@ -1,0 +1,80 @@
+/**
+ * JS-activated tabbed content elements, only shows the currently active
+ * .tabs-content element
+ *
+ * @example
+ * <ul class="tabs">
+ *   <li><a class="active" href="#foo0"></a></li>
+ *   <li><a href="#foo1"></a></li>
+ *   <li><a href="#foo2"></a></li>
+ * </ul>
+ * <ul class="tabs-content">
+ *   <li class="active" id="foo0"></li>
+ *   <li id="foo1"></li>
+ *   <li id="foo2"></li>
+ * </ul> 
+ *
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.tabs {
+    @extend %list-unstyled;
+    @extend %clearfix;
+    @extend .alignment-center;
+
+    li {
+        @extend .margin-bottom-none;
+        min-width: 20%;
+        float: left;
+    }
+
+    a {
+        @extend %background-color-base;
+        line-height: 2.1;
+        display: block;
+        padding: 0 0.5em;
+        &:active:not(.active), &:hover:not(.active), &:focus:not(.active) {
+            @extend %background-color-container-accent;
+            @extend %font-color-secondary;
+        }
+    }
+
+    .active {
+        @extend %background-color-base-accent;
+        @extend %font-color-secondary;
+        @extend %font-shadow-base;
+        line-height: 2;
+        margin-top: -0.4em;
+        font-size: 1.3em;
+        cursor: default;
+        &:visited {
+            @extend %font-color-secondary;
+        }
+    }
+}
+
+.tabs-content { 
+    @extend %list-unstyled;
+    @extend .margin-bottom;
+
+    > li { 
+        display:none;
+        &.active {
+            display: block;
+        }
+        > * {
+            margin: 0;
+        }
+    }
+}
+
+html.no-js .tabs-content:not(.requires-js) > li {
+    display: block;
+}

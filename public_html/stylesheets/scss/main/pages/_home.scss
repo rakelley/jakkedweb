@@ -1,0 +1,151 @@
+/**
+ * Page-specific styles for home page
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+/**
+ * Google Calendar widget
+ */
+.gcal-wrapper {
+    @extend .margin-bottom-double;
+}
+.gcal {
+    @extend %font-size-big;
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    padding-left: $spacer / 4;
+}
+
+
+/**
+ * Hours table
+ */
+.gymhours {
+    margin: 0 auto $spacer auto;
+
+    @include media-phones {
+        min-width: 60%;
+        width: auto;
+        max-width: 100%;
+    }
+
+    td {
+        @include media-subbase {
+            // active media-phone changes at tablet due to space restriction
+            &:before {
+                display: inline-block;
+            }
+            &:not([data-th]) {
+                display: none;
+            }
+        }
+    }
+
+}
+.gymhours-header {
+    //override default hide at media-phone
+    display: table-header-group;
+}
+
+
+/**
+ * Recent news widget
+ */
+.news { 
+    @extend .column-eight;
+    @extend .alignment-center;
+    height: 24em; 
+    overflow-y: scroll; 
+    @include media-phones {
+        height: auto;
+        overflow-y: auto;
+    }
+}
+.news-heading {
+    @extend .heading-section;
+}
+.news-searchlink {
+    @extend .button-large-smalltext;
+}
+.news-entries {
+    @extend %list-unstyled;
+    @extend .alignment-left;
+    @include media-phones {
+        padding-left: $spacer;
+        text-indent: $spacer * -1;
+    }
+}
+.news-entry {
+    @extend .margin-bottom-double;
+    @extend %clearfix;
+    @include media-phones {
+        margin-bottom: $spacer;
+        padding-left: $spacer / 4;
+    }
+}
+.news-entry-heading {
+    :hover, :focus, :active {
+        @extend %font-color-primary-accent;
+    }
+}
+.news-entry-title {
+    @extend %heading-four;
+    @extend .margin-bottom-none;
+    &:before {
+        padding-right: $spacer / 4;
+        content: "\0BB \020";
+        @include media-nophones {
+            padding-right: 0;
+            content: "";
+        }
+    }
+}
+.news-entry-attribution {
+    @extend .para-footnote;
+    @extend %font-color-secondary;
+    @extend %display-hidden-phones;
+}
+.news-entry-body {
+    @extend %display-hidden-phones;
+    :last-child {
+        @extend .margin-bottom-quarter;
+    }
+}
+.news-entry-full {
+    @extend %display-hidden-phones;
+}
+
+
+/**
+ * Splash section
+ */
+.splash {
+    @extend .column-twelve;
+    @extend .column-offset-two;
+    @extend .margin-bottom-double;
+    @extend .alignment-center;
+}
+.splash-video {
+    @extend .margin-bottom;
+    max-width: 100%;
+}
+.splash-heading {
+    @extend %heading-three;
+}
+.splash-description {
+    @extend .para-heading;
+}
+.splash-cta {
+    @extend .button-large;
+    span {
+        @extend .font-size-bigger;
+    }
+}

@@ -1,0 +1,52 @@
+/**
+ * Classes for generic form types and sub-elements
+ *
+ *
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.form-title {
+    margin: 0 0 $spacer / 4;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.form-title-sub {
+    margin: $spacer / -4 0 $spacer / 4;
+    font-weight: normal;
+    font-size: .9em;
+}
+
+
+.textarea_small {
+    height: auto;
+    min-height: 4em;
+}
+
+
+/**
+ * Form with js-driven submission, presented as solitary checkbox or submit
+ * button with hidden inputs
+ */
+.form-invisible {
+    @extend %reset;
+    fieldset {
+        @extend %reset;
+        @extend .alignment-center;
+        background: none;
+    }
+    input {
+        float: none;
+        margin: 0 auto;
+        &[type="submit"] {
+            padding: $spacer / 2 $spacer;
+        }
+    }
+    @include media-phones {
+        display: inline-block;
+    }
+}

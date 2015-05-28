@@ -1,0 +1,42 @@
+/**
+ * Mixins for backgrounds
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+@mixin bg_accent($base, $degree: medium) {
+    $h-adjust: 6;
+    $l-adjust: 10%;
+
+    @if $degree == small {
+        $h-adjust: 3;
+        $l-adjust: 5%;
+    }
+    @elseif $degree == large {
+        $h-adjust: 8;
+        $l-adjust: 15%;
+    }
+
+    @if lightness($base) < 40% {
+        background: adjust_color($base, $hue: $h-adjust, $lightness: $l-adjust);
+    }
+    @else {
+        background: adjust_color($base, $hue: $h-adjust * -1,
+        						 $saturation: $l-adjust);
+    }
+}
+
+
+@mixin bg_image_properties($position: center, $repeat: no-repeat,
+						   $size: contain)
+{
+    background-position: $position;
+    background-repeat: $repeat;
+    background-size: $size;
+}

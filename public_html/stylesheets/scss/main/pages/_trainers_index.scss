@@ -1,0 +1,51 @@
+/**
+ * Page-specific styles for /trainers/index
+ *
+ * 
+ * All content covered under The MIT License except where included 3rd-party
+ * vendor files are licensed otherwise.
+ * 
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Ryan Kelley
+ * @copyright 2011-2015 Jakked Hardcore Gym
+ */
+
+.trainer_gallery-heading {
+    @extend .column-sixteen;
+    @extend .margin-bottom;
+}
+
+%trainer_gallery-image {
+    @extend %shadow-first-small;
+    @include border_radius; 
+    float: left;
+    margin: $spacer / 4;
+}
+.trainer_gallery-trainer {
+    @extend .column-eight;
+    img {
+        @extend %trainer_gallery-image;
+        max-height: 18.75em;
+        max-width: 50%;
+        @include media-phones {
+            max-height: 14.5em;
+        }
+    }
+}
+.trainer_gallery-image-placeholder {
+    @extend %trainer_gallery-image;
+    @extend %background-color-base;
+    display: block;
+    height: 18em;
+    width: 35%;
+    @include media-subbase {
+        width: 45%;
+    }
+    @include media-phones {
+        max-height: 14em;
+    }
+}
+
+.trainer_gallery-footer {
+    @extend .column-sixteen;
+}
