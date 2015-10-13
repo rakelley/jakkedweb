@@ -33,7 +33,12 @@ class UpdateForm extends \rakelley\jhframe\classes\FormView implements
             ],
             'data-binding' => 'href',
             'required' => true,
-            'sanitize' => ['filters' => ['strtolower', ['word' => '\/\d']]],
+            'sanitize' => [
+                'filters' => [
+                    'strtolower',
+                    'word' => '\/\d'
+                ],
+            ],
         ],
         'title' => [
             'label' => 'Title: <small>the brief text you want displayed in the 
