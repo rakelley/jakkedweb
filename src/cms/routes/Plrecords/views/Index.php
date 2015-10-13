@@ -32,8 +32,10 @@ class Index extends \rakelley\jhframe\classes\View implements
     {
         $this->viewContent = <<<HTML
 <h2 class="page-heading">Update Powerlifting Records</h2>
+<p class="page-subheading">Ensure All Weights are in Kilograms!<p>
 {$this->subViews['record']}
 {$this->subViews['meet']}
+{$this->subViews['csv']}
 
 HTML;
     }
@@ -48,6 +50,7 @@ HTML;
         return [
             'record' => 'RecordForm',
             'meet' => 'AddMeetForm',
+            'csv' => 'CsvForm',
         ];
     }
 }

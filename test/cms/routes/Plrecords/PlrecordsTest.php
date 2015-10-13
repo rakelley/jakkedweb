@@ -44,6 +44,23 @@ class PlrecordsTest extends \test\helpers\cases\AuthenticatedRouteController
 
 
     /**
+     * @covers ::CsvUpdate
+     */
+    public function testCsvUpdate()
+    {
+        $this->assertContains('csvupdate', $this->routedMethods);
+
+        $this->testObj->expects($this->once())
+                      ->method('routeAuth');
+        $this->testObj->expects($this->once())
+                      ->method('standardAction')
+                      ->with($this->isType('string'));
+
+        $this->testObj->CsvUpdate();
+    }
+
+
+    /**
      * @covers ::Update
      */
     public function testUpdate()

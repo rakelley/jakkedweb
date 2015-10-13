@@ -138,6 +138,11 @@ class RecordForm extends \rakelley\jhframe\classes\FormView implements
         'data-valmethods' => 'reload-show',
     ];
     /**
+     * {@inheritdoc}
+     * @see \rakelley\jhframe\classes\FormView::$title
+     */
+    protected $title = 'Update A Single Record';
+    /**
      * PlRecords repo instance
      * @var object
      */

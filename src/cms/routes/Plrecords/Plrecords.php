@@ -32,8 +32,9 @@ class Plrecords extends \rakelley\jhframe\classes\RouteController
             '/index/' => 'index',
         ],
         'post' => [
-            '/addmeet/' => 'addmeet',
-            '/update/'  => 'update',
+            '/addmeet/'   => 'addmeet',
+            '/csvupdate/' => 'csvupdate',
+            '/update/'    => 'update',
         ]
     ];
     /**
@@ -65,7 +66,17 @@ class Plrecords extends \rakelley\jhframe\classes\RouteController
     }
 
     /**
-     * Action to update record
+     * Action to update records via csv file
+     */
+    public function CsvUpdate()
+    {
+        $this->routeAuth();
+
+        $this->standardAction('CsvUpdate');
+    }
+
+    /**
+     * Action to update single record
      */
     public function Update()
     {
