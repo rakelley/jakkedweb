@@ -78,7 +78,7 @@ class Users extends \rakelley\jhframe\classes\Model implements
      */
     protected function getAllUsers()
     {
-        $args = ['select' => ['username', 'fullname', 'lastlogin', 'trainer']];
+        $args = ['select' => ['username', 'fullname', 'lastlogin']];
         $result = $this->db->newQuery('select', $this->table, $args)
                            ->addOrder(['DESC' => 'lastlogin'])
                            ->makeStatement()
