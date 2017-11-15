@@ -1,7 +1,6 @@
 # JakkedWeb
 
-`JakkedWeb` is the site behind [jakkedhardcore.com](https://jakkedhardcore.com),
-the business website for Jakked Hardcore Gym in Montgomery, IL.  This repository
+`JakkedWeb` was the former business website for Jakked Hardcore Gym in Montgomery, IL.  This repository
 does not contain the DB schema or any of the images, videos, or other assets
 used by the site, and is intended to serve as a code example for myself and a
 project example for [the JHFrame framework](https://github.com/rakelley/jhframe)
